@@ -1,22 +1,11 @@
-import { Button, Card, createStyles, FormControl, Slide, TextField, Typography } from '@mui/material';
+import { Card } from '@mui/material';
 import { Box } from '@mui/system';
-import { Form, useFormik } from 'formik';
-import React, { forwardRef, ReactElement, ReactNode, useRef, useState } from 'react';
-import * as yup from 'yup';
+import React, { ReactNode, useState } from 'react';
 import { LoginComponent } from '../login.component';
 import { LoadingComponent } from '../loadinng.component';
-import { makeStyles } from '@mui/styles';
-import { SlideAnimation } from '../animations/slide-animation';
-import { TransitionProps } from 'react-transition-group/Transition';
+import { ErrorComponent } from '../error-component';
 
 type TLoginState = 'login' | 'loading' | 'error' | 'success';
-
-const useSTyles = makeStyles(() => createStyles({
-    container: {
-        margin: 0
-    }
-}));
-
 
 export const LoginPage = () => {
 
@@ -24,21 +13,20 @@ export const LoginPage = () => {
 
     const getLoginComponent = (state: TLoginState): ReactNode => {
         if (state === 'login') {
-            return <LoginComponent onSubmit={() => setLoginState('loading')}/>;
+            return <LoginComponent onSubmit={() => setLoginState('loading')} />;
         } else if (state === 'loading') {
-            return <LoadingComponent />;
+            return <LoadingComponent onFinishedLoading={() => setLoginState('error')}/>;
+        } else if (state === 'error') {
+            return <ErrorComponent onTryAgain={() => setLoginState('login')} />
         }
     }
 
-    const [inProp, setInProp] = useState(false);
-
-    const containerRef = useRef(null);
-
-
     return (
         <Box display='flex' justifyContent='center' paddingTop='100px' paddingRight='20px' paddingLeft='20px'>
-            <Card style={{ padding: '20px', opacity: '0.8'}}>
-                <LoginComponent onSubmit={() => alert("hallo")} />
+            <Card style={{ padding: '20px', opacity: '0.8', width: '300px', height: '250px'}}>
+                <Box width='100%' height='100%' display='flex' justifyContent='center' alignItems='center' flexDirection='row'>
+                    {getLoginComponent(loginState)}
+                </Box>
             </Card>
         </Box>
     );

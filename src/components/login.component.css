@@ -1,0 +1,14 @@
+.my-node-enter {
+    opacity: 1;
+  }
+  .my-node-enter-active {
+    animation: slide-in 2s forwards;
+    -webkit-animation: slide-in 0.5s forwards;
+  }
+  .my-node-exit {
+    opacity: 1;
+  }
+  .my-node-exit-active {
+    opacity: 0;
+    transition: opacity 200ms;
+  }

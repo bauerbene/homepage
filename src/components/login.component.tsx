@@ -14,8 +14,6 @@ type TLoginComponentProps = {
 
 export const LoginComponent = (props: TLoginComponentProps) => {
 
-    const [inProp, setInProp] = useState(false);
-
     const validationScheme = yup.object({
         email: yup
             .string()

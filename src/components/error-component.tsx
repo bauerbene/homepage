@@ -1,6 +1,4 @@
 import React from 'react';
-import ErrorIcon from '@mui/icons-material/Error';
-import { Box } from '@mui/system';
 import { Button, Typography, Alert } from '@mui/material';
 
 type TErrorComponentProps = {

@@ -1,17 +1,7 @@
 import { useLocalStorageState } from "../hooks/use-local-storage-state";
 import { Players } from "./Players";
 import { AddPlayerCard } from "./AddPlayerCard";
-import {
-  AppBar,
-  Box,
-  Button,
-  Divider,
-  IconButton,
-  Stack,
-  Toolbar,
-  Typography,
-} from "@mui/material";
-import { Menu, More, Search } from "@mui/icons-material";
+import { AppBar, Button, Stack, Toolbar, Typography } from "@mui/material";
 
 export type Player = {
   isActive: boolean;

@@ -1,14 +1,7 @@
-import { useNavigate } from "react-router-dom";
-import { routes } from "../bootstrap/routes";
-import { Button } from "@mui/material";
+import { PlayImposterCard } from "../home/PlayImposterCard";
 
 const Home = () => {
-  const navigate = useNavigate();
-  return (
-    <Button onClick={() => navigate(routes.imposter.path)}>
-      go to imposter
-    </Button>
-  );
+  return <PlayImposterCard />;
 };
 
 export default Home;

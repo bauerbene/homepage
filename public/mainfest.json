@@ -1,20 +1,20 @@
 {
-  "short_name": "Imposter",
   "name": "Imposter",
+  "orientation": "portrait",
+  "short_name": "Imposter",
+  "start_url": "/homepage",
+  "lang": "de",
+  "display": "standalone",
   "icons": [
     {
       "src": "icons/icon-192x192.png",
-      "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/png",
+      "sizes": "192x192"
     },
     {
       "src": "icons/icon-512x512.png",
-      "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/png",
+      "sizes": "512x512"
     }
-  ],
-  "start_url": ".",
-  "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  ]
 }

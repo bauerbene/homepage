@@ -12,8 +12,4 @@ export const routes = validateRoutes({
     path: `${config.basePath}/`,
     element: () => import("../pages/Home"),
   },
-  imposter: {
-    path: `${config.basePath}/imposter`,
-    element: () => import("../pages/Imposter"),
-  },
 });

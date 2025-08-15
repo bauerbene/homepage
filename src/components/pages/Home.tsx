@@ -1,7 +1,7 @@
-import { PlayImposterCard } from "../home/PlayImposterCard";
+import { Imposter } from "../imposter/Imposter";
 
 const Home = () => {
-  return <PlayImposterCard />;
+  return <Imposter />;
 };
 
 export default Home;

@@ -11,7 +11,7 @@ export const BasePage = (props: PropsWithChildren) => {
         alignItems: "center",
       }}
     >
-      {props.children}
+      <Box sx={{ px: 4, width: "412px" }}>{props.children}</Box>
     </Box>
   );
 };

@@ -1,11 +1,7 @@
-import { useNavigate } from "react-router-dom";
-import { routes } from "../bootstrap/routes";
-import { Button } from "@mui/material";
+import { Imposter as ImposterComponent } from "../imposter/Imposter";
 
 const Imposter = () => {
-  const navigate = useNavigate();
-
-  return <Button onClick={() => navigate(routes.home.path)}>go to home</Button>;
+  return <ImposterComponent />;
 };
 
 export default Imposter;

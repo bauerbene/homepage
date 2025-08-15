@@ -11,6 +11,9 @@ export const PlayImposterCard = () => {
         px: 3,
         py: 8,
         cursor: "pointer",
+        width: "100%",
+        display: "flex",
+        justifyContent: "center",
       })}
       onClick={() => navigate(routes.imposter.path)}
     >

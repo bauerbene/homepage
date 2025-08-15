@@ -7,7 +7,7 @@ export const PlayImposterCard = () => {
   return (
     <Card
       sx={(theme) => ({
-        background: theme.palette.primary.main,
+        background: theme.palette.primary.dark,
         px: 3,
         py: 8,
         cursor: "pointer",

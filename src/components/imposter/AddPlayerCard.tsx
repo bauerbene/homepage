@@ -26,7 +26,7 @@ export const AddPlayerCard = (props: AddPlayerCardProps) => {
   );
 
   return (
-    <Stack direction="row" spacing={2}>
+    <Stack direction="row" spacing={2} sx={{ width: "100%" }}>
       <TextField
         error={doesPlayerNameAlreadyExist(newName)}
         value={newName}

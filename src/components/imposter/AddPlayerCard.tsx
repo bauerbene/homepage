@@ -1,11 +1,11 @@
 import { IconButton, Stack, TextField } from "@mui/material";
 import { useCallback, useState, type SetStateAction } from "react";
-import type { Player } from "./Imposter";
+import type { TPlayer } from "./Imposter";
 import { Add } from "@mui/icons-material";
 
 type AddPlayerCardProps = {
-  readonly players: Player[];
-  readonly setPlayers: (stateUpdater: SetStateAction<Player[]>) => void;
+  readonly players: TPlayer[];
+  readonly setPlayers: (stateUpdater: SetStateAction<TPlayer[]>) => void;
 };
 
 export const AddPlayerCard = (props: AddPlayerCardProps) => {

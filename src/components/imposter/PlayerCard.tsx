@@ -10,12 +10,8 @@ type PlayerCardProps = {
 
 export const PlayerCard = (props: PlayerCardProps) => {
   return (
-    <Card sx={{ width: "100%", p: 2, my: 1 }}>
-      <Stack
-        direction="row"
-        spacing={2}
-        sx={{ alignItems: "center", width: "100%" }}
-      >
+    <Card sx={{ width: "100%", overflow: "unset" }}>
+      <Stack direction="row" sx={{ alignItems: "center" }}>
         <Checkbox
           checked={props.isActive}
           onChange={(e) => props.setActiveState(e.target.checked)}

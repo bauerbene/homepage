@@ -1,7 +1,6 @@
 import { lazy, Suspense, useMemo } from "react";
 import { routes } from "./routes";
 import { Route, Routes } from "react-router-dom";
-import { BasePage } from "./BasePage";
 
 export const RoutingProvider = () => {
   const routeElements = useMemo(
@@ -18,9 +17,7 @@ export const RoutingProvider = () => {
           path={x.path}
           element={
             <Suspense>
-              <BasePage>
-                <x.element />
-              </BasePage>
+              <x.element />
             </Suspense>
           }
         />

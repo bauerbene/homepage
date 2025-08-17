@@ -1,10 +1,11 @@
 import { useCallback, type SetStateAction } from "react";
-import type { Player } from "./Imposter";
+import type { TPlayer } from "./Imposter";
 import { PlayerCard } from "./PlayerCard";
+import { Stack } from "@mui/material";
 
 type PlayersProps = {
-  readonly players: Player[];
-  readonly setPlayers: (stateUpdater: SetStateAction<Player[]>) => void;
+  readonly players: TPlayer[];
+  readonly setPlayers: (stateUpdater: SetStateAction<TPlayer[]>) => void;
 };
 
 export const Players = (props: PlayersProps) => {
@@ -15,6 +16,7 @@ export const Players = (props: PlayersProps) => {
         if (playerToChange) {
           playerToChange.isActive = activeState;
         }
+
         return [...curr];
       });
     },
@@ -35,7 +37,7 @@ export const Players = (props: PlayersProps) => {
   );
 
   return (
-    <>
+    <Stack sx={{ overflow: "scroll", height: "100%" }} spacing={2}>
       {props.players.map((player, index) => (
         <PlayerCard
           key={index}
@@ -47,6 +49,6 @@ export const Players = (props: PlayersProps) => {
           name={player.name}
         />
       ))}
-    </>
+    </Stack>
   );
 };

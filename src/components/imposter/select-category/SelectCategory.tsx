@@ -8,6 +8,7 @@ type SelectCategoryProps = {
   readonly setSelectedCategories: (
     stateUpdater: SetStateAction<string[]>
   ) => void;
+  readonly startGame: () => void;
 };
 
 export const SelectCategory = (props: SelectCategoryProps) => {
@@ -58,6 +59,7 @@ export const SelectCategory = (props: SelectCategoryProps) => {
               color="secondary"
               sx={{ mt: 4 }}
               disabled={props.selectedCategories.length === 0}
+              onClick={props.startGame}
             >
               Spiel starten
             </Button>

@@ -1,6 +1,6 @@
 import { IconButton, Stack, TextField } from "@mui/material";
 import { useCallback, useState, type SetStateAction } from "react";
-import type { TPlayer } from "./Imposter";
+import type { TPlayer } from "../Imposter";
 import { Add } from "@mui/icons-material";
 
 type AddPlayerCardProps = {

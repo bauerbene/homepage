@@ -1,6 +1,6 @@
 import { Add, Remove } from "@mui/icons-material";
 import { Checkbox, IconButton, Stack, Typography } from "@mui/material";
-import type { TPlayer, TSettings } from "./Imposter";
+import type { TPlayer, TSettings } from "../Imposter";
 import { useCallback, useEffect, type SetStateAction } from "react";
 
 type SettingsProps = {

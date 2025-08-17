@@ -1,5 +1,5 @@
 import { useCallback, type SetStateAction } from "react";
-import type { TPlayer } from "./Imposter";
+import type { TPlayer } from "../Imposter";
 import { PlayerCard } from "./PlayerCard";
 import { Stack } from "@mui/material";
 

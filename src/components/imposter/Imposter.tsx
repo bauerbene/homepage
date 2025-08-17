@@ -96,6 +96,7 @@ export const Imposter = () => {
         selectedCategories={selectedCategories}
         setSelectedCategories={setSelectedCategories}
         startGame={startGame}
+        back={() => setGameSate("initial")}
       />
     );
   }
@@ -105,6 +106,7 @@ export const Imposter = () => {
       playerNames={players.filter((x) => x.isActive).map((x) => x.name)}
       imposterNames={currentImposters}
       word={currentWord}
+      endGame={() => setGameSate("initial")}
     />
   );
 };

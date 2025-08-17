@@ -37,7 +37,7 @@ export const Players = (props: PlayersProps) => {
   );
 
   return (
-    <Stack sx={{ overflow: "scroll", height: "100%" }} spacing={2}>
+    <Stack sx={{ overflow: "scroll", height: "100%", p: 2 }} spacing={2}>
       {props.players.map((player, index) => (
         <PlayerCard
           key={index}

@@ -1,15 +1,18 @@
 import { Button, Stack, Typography } from "@mui/material";
 import { useCallback, useState } from "react";
+import { PlayerCard } from "./PlayerCard";
 
 type GameProps = {
   readonly imposterNames: string[];
   readonly playerNames: string[];
   readonly word: string;
+  readonly endGame: () => void;
 };
 
 export const Game = (props: GameProps) => {
   const [currentPlayer, setCurrentPlayer] = useState(props.playerNames[0]);
   const [isFinished, setIsFinished] = useState(false);
+  const [cardIsFlipped, setCardIsFlipped] = useState(false);
 
   const getWord = useCallback(() => {
     if (props.imposterNames.includes(currentPlayer)) {
@@ -30,16 +33,38 @@ export const Game = (props: GameProps) => {
 
   return (
     <Stack
-      sx={{ height: "100vh", flexDirection: "column", overflow: "hidden" }}
+      sx={{
+        height: "100vh",
+        flexDirection: "column",
+        overflow: "hidden",
+        justifyContent: "center",
+        alignContent: "center",
+        alignItems: "center",
+      }}
     >
       {isFinished ? (
-        <Typography>Los gehts</Typography>
+        <Stack spacing={8}>
+          <Typography variant="h5">Los gehts</Typography>
+          <Button variant="contained" onClick={props.endGame}>
+            Spiel beenden
+          </Button>
+        </Stack>
       ) : (
-        <>
-          <Typography>{currentPlayer}</Typography>
-          <Typography>{getWord()}</Typography>
-          <Button onClick={nextPlayer}>Weiter</Button>
-        </>
+        <Stack spacing={8} sx={{ width: "100%", p: 2 }}>
+          <PlayerCard
+            playerName={currentPlayer}
+            word={getWord()}
+            flipped={cardIsFlipped}
+            setFlipped={setCardIsFlipped}
+          />
+          <Button
+            onClick={nextPlayer}
+            variant="contained"
+            disabled={cardIsFlipped}
+          >
+            Weiter
+          </Button>
+        </Stack>
       )}
     </Stack>
   );

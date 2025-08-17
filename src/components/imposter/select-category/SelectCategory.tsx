@@ -1,7 +1,16 @@
-import { Stack, AppBar, Toolbar, Button, Typography } from "@mui/material";
+import {
+  Stack,
+  AppBar,
+  Toolbar,
+  Button,
+  Typography,
+  IconButton,
+  Box,
+} from "@mui/material";
 import { Categories } from "./Categories";
 import type { SetStateAction } from "react";
 import { Warning } from "@mui/icons-material";
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 
 type SelectCategoryProps = {
   readonly selectedCategories: string[];
@@ -9,6 +18,7 @@ type SelectCategoryProps = {
     stateUpdater: SetStateAction<string[]>
   ) => void;
   readonly startGame: () => void;
+  readonly back: () => void;
 };
 
 export const SelectCategory = (props: SelectCategoryProps) => {
@@ -20,9 +30,16 @@ export const SelectCategory = (props: SelectCategoryProps) => {
         direction="row"
         sx={{ justifyContent: "center", height: "40px", mt: 4 }}
       >
-        <Typography variant="h5" component="h1">
-          Kategorien Auswählen
-        </Typography>
+        <Box flex={0} textAlign="left">
+          <IconButton onClick={props.back}>
+            <ArrowBackIcon />
+          </IconButton>
+        </Box>
+        <Box flex={1} textAlign="center">
+          <Typography variant="h5" component="h1">
+            Kategorien Auswählen
+          </Typography>
+        </Box>
       </Stack>
       <Stack
         sx={{
